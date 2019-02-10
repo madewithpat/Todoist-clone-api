@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+   # PostgreSQL DB
+   db:
+      container_name: db
+      restart: always
+      build: ./db
+      environment:
+         POSTGRES_USER: ${PG_USER}
+         POSTGRES_PASSWORD: ${PG_PW}
+         # POSTGRES_URL: ${PG_URL}
+         POSTGRES_DB: ${PG_DB}
+         POSTGRES_HOST: ${PG_HOST}
+      ports:
+         - "5432:5432"
+   # Redis goes here
+   # API goes here
